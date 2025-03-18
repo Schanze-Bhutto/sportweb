@@ -11,16 +11,24 @@
     <!-- FONT AWESOME LINK -->
      <link rel="stylesheet" <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
- html{
-  scroll-behavior: smooth;
- }
- .image-container{
-  position: relative;
-  display: inline-block;
- }
- .image-container .btn{
-  position: absolute;
-    top: 80%; 
+   
+ html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%; 
+}
+
+.image-container .btn {
+    position: absolute;
+    top: 50%;  
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
@@ -29,33 +37,47 @@
     font-size: 16px;
     border-radius: 5px;
 }
-img{
-  border: 3px solid black;
-}
-.container-one{
-  display: flex;
-  align-items: center; 
-  gap: 20px;
+
+img {
+    border: 3px solid black;
+    max-width: 100%; 
+    height: auto;
+    display: block;
 }
 
-.football{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.container-one {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    gap: 20px;
 }
-.sports{
-  
-  background-color: rgb(34, 31, 31);
-  color:white;
- 
+
+.football {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.sports {
+    background-color: rgb(34, 31, 31);
+    color: white;
+}
+
 .hidden {
-    display: none; /* Hide section initially */
+    display: none; 
 }
 
 .visible {
-    display: block; /* Show when activated */
+    display: block; 
     animation: fadeIn 0.5s ease-in-out;
 }
 
+
+* {
+    box-sizing: border-box;
+}
+
+footer {
+        width: 100%;
+    }
 </style>
 
     </head>
@@ -105,9 +127,57 @@ img{
        <div class="image-container">
        <img src="images/header.jpg" height="auto" width="100%">
        
-       <button class="btn btn-dark" onclick="register()">REGISTER NOW</button>
+       <button class="btn btn-dark" onclick="register()" data-bs-toggle="modal" data-bs-target="#authModal">REGISTER NOW</button>
        </div>
-       
+       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Sign-In / Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Success Message -->
+                    <div id="successMessage" class="alert alert-success d-none"></div>
+    
+                    <!-- Sign-In Form -->
+                    <h4 class="text-center">SIGN-IN</h4>
+                    <form id="signInForm">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Phone No." required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Create Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Confirm Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign-In</button>
+                    </form>
+
+<hr>
+                    <h4 class="text-center">LOGIN</h4>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
       <br><br><br>
       
       
@@ -270,9 +340,13 @@ img{
     </div>
 <br><br>
 
-<h1 class="text-center">GALLERY</h1>
+
 <hr>
-<div class="container-fluid bg-dark text-light" height="auto" width="100%">
+<div class="container-fluid  bg-dark text-light" height="auto" width="100%">
+    <h1 class="text-center">GALLERY</h1>
+
+    <hr>
+    <br><br>
 <div class="row" >
 <div class="col-sm-4">
 <img src="images/gallery1.jpeg" height="250px" width="500px">
@@ -1258,29 +1332,107 @@ img{
         </div>
     </section>
 </div>
-
 <br>
+<!-- FOOTER -->
 
+<footer class="text-center text-lg-start bg-dark text-light">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-light">
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <div>
+            <a href="" class="me-4 text-light"><i class="fab fa-facebook-f"></i></a>
+            <a href="" class="me-4 text-light"><i class="fab fa-twitter"></i></a>
+            <a href="" class="me-4 text-light"><i class="fab fa-google"></i></a>
+            <a href="" class="me-4 text-light"><i class="fab fa-instagram"></i></a>
+            <a href="" class="me-4 text-light"><i class="fab fa-linkedin"></i></a>
+            <a href="" class="me-4 text-light"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <section class="container-fluid w-100">
+        <div class="text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4"><i class="fas fa-gem me-3"></i>SportsInfo</h6>
+                    <p>SportsInfo- the gateway to fun mixed with sport!</p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">CONTENT</h6>
+                    <p><a href="#sports" class="text-light">Sports</a></p>
+                    <p><a href="#gallery" class="text-light">Gallery</a></p>
+                    <p><a href="#!" class="text-light">Contact Us</a></p>
+                    <p><a href="#!" class="text-light">About Us</a></p>
+                </div>
+
+               
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> Karachi, Pakistan</p>
+                    <p><i class="fas fa-envelope me-3"></i> sportsinfo@example.com</p>
+                    <p><i class="fas fa-phone me-3"></i> + 92 234 567 88</p>
+                    <p><i class="fas fa-print me-3"></i> + 92 234 567 89</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center p-4 bg-secondary text-light w-100">
+        © 2021 Copyright: <a class="text-light fw-bold" href="">sportsinfo.com</a>
+    </div>
+</footer>
+
+    
 
 
 <!-- JQUERY CDN LINK -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
  <script>
+
+    // MODAL BOX FUNCTIONALITY 
+    // Function to show success message and close modal
+    function showSuccessMessage(message) {
+        let successMessage = document.getElementById("successMessage");
+        successMessage.textContent = message;
+        successMessage.classList.remove("d-none");
+
+        setTimeout(() => {
+            successMessage.classList.add("d-none");
+            let modal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
+            modal.hide();
+        }, 2000);
+    }
+
+    // Handle Sign-In Form Submission
+    document.getElementById("signInForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        showSuccessMessage("Sign-In Successful!");
+    });
+
+    // Handle Login Form Submission
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        showSuccessMessage("Login Successful!");
+    });
+
+    // HIDING SECTIONS
  document.addEventListener("DOMContentLoaded", function () {
     let revealButtons = document.querySelectorAll(".reveal-btn");
 
     revealButtons.forEach(button => {
         button.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default jump
+            event.preventDefault(); 
 
-            let targetId = this.getAttribute("data-target"); // Get the section ID
+            let targetId = this.getAttribute("data-target"); 
             let targetSection = document.getElementById(targetId);
 
             if (targetSection) {
-                targetSection.classList.remove("hidden"); // Remove 'hidden' to show the section
-                targetSection.classList.add("visible"); // Add 'visible' for styling if needed
-                targetSection.scrollIntoView({ behavior: "smooth" }); // Scroll to it
+                targetSection.classList.remove("hidden"); 
+                targetSection.classList.add("visible"); 
+                targetSection.scrollIntoView({ behavior: "smooth" }); 
             }
         });
     });
