@@ -142,7 +142,7 @@ footer {
     
                     
                     <h4 class="text-center">SIGN-IN</h4>
-                    <form id="signInForm">
+                    <div id="signInForm">
                         <div class="row mb-3">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="First Name" required>
@@ -164,11 +164,11 @@ footer {
                         <button type="submit" class="btn btn-outline-dark w-100" onclick="signin()">Sign-In</button>
 
                         
-                    </form>
+                    </div>
 
 <hr>
                     <h4 class="text-center">LOGIN</h4>
-                <form id="loginForm">
+                <div id="loginForm">
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Username" required>
                     </div>
@@ -176,7 +176,7 @@ footer {
                         <input type="password" class="form-control" placeholder="Password" required>
                     </div>
                     <button type="submit" class="btn btn-outline-dark w-100">Login</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -1396,7 +1396,7 @@ footer {
  <script>
 
     // MODAL BOX FUNCTIONALITY 
-    // Function to show success message and close modal
+    
     function showSuccessMessage(message) {
         let successMessage = document.getElementById("successMessage");
         successMessage.textContent = message;
