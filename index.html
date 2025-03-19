@@ -137,10 +137,10 @@ footer {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Success Message -->
+                    
                     <div id="successMessage" class="alert alert-success d-none"></div>
     
-                    <!-- Sign-In Form -->
+                    
                     <h4 class="text-center">SIGN-IN</h4>
                     <form id="signInForm">
                         <div class="row mb-3">
@@ -152,15 +152,18 @@ footer {
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="tel" class="form-control" placeholder="Phone No." required>
+                            <input type="tel" class="form-control" id="phone" placeholder="Phone No. +92 XXX XXXXXXX" required>
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control" placeholder="Create Password" required>
+                            <input type="password" class="form-control"  id="newpass" placeholder="Create Password" required>
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control" placeholder="Confirm Password" required>
+                            <input type="password" class="form-control"  id="confirmpass" placeholder="Confirm Password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Sign-In</button>
+                       <h5 class="text-danger" id="signerror"></h5>
+                        <button type="submit" class="btn btn-outline-dark w-100" onclick="signin()">Sign-In</button>
+
+                        
                     </form>
 
 <hr>
@@ -172,7 +175,7 @@ footer {
                     <div class="mb-3">
                         <input type="password" class="form-control" placeholder="Password" required>
                     </div>
-                    <button type="submit" class="btn btn-success w-100">Login</button>
+                    <button type="submit" class="btn btn-outline-dark w-100">Login</button>
                 </form>
             </div>
         </div>
@@ -1398,21 +1401,26 @@ footer {
         let successMessage = document.getElementById("successMessage");
         successMessage.textContent = message;
         successMessage.classList.remove("d-none");
-
-        setTimeout(() => {
-            successMessage.classList.add("d-none");
-            let modal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
-            modal.hide();
-        }, 2000);
     }
 
-    // Handle Sign-In Form Submission
-    document.getElementById("signInForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        showSuccessMessage("Sign-In Successful!");
-    });
 
-    // Handle Login Form Submission
+   //SIGN IN
+    
+    function signin(){
+        let newpass = document.getElementById("newpass").value
+        let confirmpass = document.getElementById("confirmpass").value
+        let phone = document.getElementById("phone").value
+        let phonetest = /^(\+)(92)\s[0-9]{3}\s[0-9]{7}$/
+
+        if(newpass === confirmpass && phonetest.test(phone)){
+            showSuccessMessage("Sign-In Successful!");
+        }else{
+            document.getElementById("signerror").innerHTML = "invalid details!"
+           
+        }
+    }
+
+   //LOGIN
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
         showSuccessMessage("Login Successful!");
