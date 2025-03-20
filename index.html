@@ -38,12 +38,19 @@
     border-radius: 5px;
 }
 
-img {
+.img {
     border: 3px solid black;
     max-width: 100%; 
     height: auto;
     display: block;
+    
+  transition: transform 0.3s ease-in-out;
 }
+
+.img:hover {
+  transform: scale(1.1);
+}
+
 
 .container-one {
     display: flex;
@@ -52,7 +59,7 @@ img {
     gap: 20px;
 }
 
-.football {
+.font {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -69,6 +76,40 @@ img {
     display: block; 
     animation: fadeIn 0.5s ease-in-out;
 }
+.searchbar{
+    margin-left:700px;
+    border-radius:20px;
+    height:35px;
+    width:auto;
+    text-align: center;
+    box-shadow: 1px 1px 2px 1px whitesmoke;
+    
+}
+.sportsinfo{
+    align-items: center;
+}
+.navbar2{
+    border-top:2px solid black;
+    border-right:2px solid black;
+    border-left:2px solid black;
+}
+
+.mission{
+    padding:20px;
+}
+.gallery{
+    padding:50px;
+    border: 2px solid black;
+    width:100%
+}
+.transition {
+    transition: transform 0.3s ease-in-out;
+}
+.transition:hover {
+    transform: translateY(-20px);
+}
+
+
 
 
 * {
@@ -82,30 +123,29 @@ footer {
 
     </head>
 <body>
+
     
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-     
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                  <h4><b>SPORTS INFO</b></h4>
-              </li>
-          </ul>
-      </div>
-      <div class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2 text-right" type="text" id="search" placeholder="Search Sports">
-              <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="result()">Search</button>
-      </div>
-            
-            </nav>
+     <nav class="navbar navbar-expand-md text-light bg-danger">
+        <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <h4 class="sportsinfo">SPORTS INFO</h4>
+                </li>
+            </ul>
 
+            <div class="container  ">
+                <input type="text" class=" mr-sm-2 searchbar" placeholder="Search Sports" id="search">
+                <i class="fa-solid fa-search" onclick="result()"></i>
+                
+                
+            </div>
+        </div>
+     </nav>
+    
 
       <!-- NAVBAR 2 -->
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light bg-light navbar2">
         <div class="container">
        
           <div class="collapse navbar-collapse">
@@ -127,20 +167,19 @@ footer {
        <div class="image-container">
        <img src="images/header.jpg" height="auto" width="100%">
        
-       <button class="btn btn-dark" onclick="register()" data-bs-toggle="modal" data-bs-target="#authModal">REGISTER NOW</button>
+       <button class="btn btn-dark text-light" onclick="register()" data-bs-toggle="modal" data-bs-target="#authModal">REGISTER NOW</button>
        </div>
        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="authModalLabel">Sign-In / Login</h5>
+                    <h5 class="modal-title" id="authModalLabel"><b>Sign-In / Login</b></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     
                     <div id="successMessage" class="alert alert-success d-none"></div>
     
-                    
                     <h4 class="text-center">SIGN-IN</h4>
                     <div id="signInForm">
                         <div class="row mb-3">
@@ -183,70 +222,68 @@ footer {
 </div>
       <br><br><br>
       
-      
-
       <!-- SPORTS -->
 
-      <h1 class="text-center">OUR SPORTS</h1>
+      <h1 class="text-center font">OUR SPORTS</h1>
       <hr>
       <br>
-      <div class="container sports" id="sport">
+      <div class="container-fluid sports" id="sport">
        <div class="container-one">
-       <a href="#" class="reveal-btn"  data-target="football"><img src="images/football.jpg" height="380px" width="680px"></a>
-       <h2 class="football">FOOTBALL</h2>
+       <a href="#" class="reveal-btn"  data-target="football"><img src="images/football.jpg" height="380px" width="680px" class="img"></a>
+       <h2 class="font">FOOTBALL</h2>
       </div>
 <br>
       <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="judo"><img src="images/judo.jpg" height="380px" width="680px"></a>
-        <h2 class="football">JUDO</h2>
+        <a href="#" class="reveal-btn" data-target="judo"><img src="images/judo.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">JUDO</h2>
        </div>
 <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="tennis"><img src="images/tennis.jpg" height="380px" width="680px"></a>
-        <h2 class="football">TENNIS</h2>
+        <a href="#" class="reveal-btn" data-target="tennis"><img src="images/tennis.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">TENNIS</h2>
        </div>
 <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="motorcycle-racing"><img src="images/motorcycle racing.jpg" height="380px" width="680px"></a>
-        <h2 class="football">MOTORCYCLE RACING</h2>
+        <a href="#" class="reveal-btn" data-target="motorcycle-racing"><img src="images/motorcycle racing.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">MOTORCYCLE RACING</h2>
        </div>
 <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="volleyball"><img src="images/volleyball.jpg" height="380px" width="680px"></a>
-        <h2 class="football">VOLLEYBALL</h2>
+        <a href="#" class="reveal-btn" data-target="volleyball"><img src="images/volleyball.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">VOLLEYBALL</h2>
        </div>
 <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="golf"><img src="images/golf.jpg" height="380px" width="680px"></a>
-        <h2 class="football">GOLF</h2>
+        <a href="#" class="reveal-btn" data-target="golf"><img src="images/golf.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">GOLF</h2>
        </div>
 <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="chess"><img src="images/chess.jpg" height="380px" width="680px"></a>
-        <h2 class="football">CHESS</h2>
+        <a href="#" class="reveal-btn" data-target="chess"><img src="images/chess.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">CHESS</h2>
        </div>
 <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="billiards"><img src="images/billiards.jpg" height="380px" width="680px"></a>
-        <h2 class="football">BILLIARDS</h2>
+        <a href="#" class="reveal-btn" data-target="billiards"><img src="images/billiards.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">BILLIARDS</h2>
         </div>
     
 <br>
         <div class="container-one">
-         <a href="#" class="reveal-btn" data-target="badminton"><img src="images/badminton.jpg" height="380px" width="680px"></a>
-         <h2 class="football">BADMINTON</h2>
+         <a href="#" class="reveal-btn" data-target="badminton"><img src="images/badminton.jpg" height="380px" width="680px" class="img"></a>
+         <h2 class="font">BADMINTON</h2>
         </div>
  <br>
  <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="swimming"><img src="images/swimming.jpg" height="380px" width="680px"></a>
-        <h2 class="football">SWIMMING</h2>
+        <a href="#" class="reveal-btn" data-target="swimming"><img src="images/swimming.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">SWIMMING</h2>
        </div>
 <br>
 <br>
        <div class="container-one">
-        <a href="#" class="reveal-btn" data-target="athletics"><img src="images/athletics.jpg" height="380px" width="680px"></a>
-        <h2 class="football">ATHLETICS</h2>
+        <a href="#" class="reveal-btn" data-target="athletics"><img src="images/athletics.jpg" height="380px" width="680px" class="img"></a>
+        <h2 class="font">ATHLETICS</h2>
        </div>
 
 
@@ -256,11 +293,11 @@ footer {
 <br><br><br>
 
    <div class="container p-5">
-    <h2 class="text-center">TOURNAMENTS</h2>
+    <h2 class="text-center font">TOURNAMENTS</h2>
     <hr>
     <div class="d-flex">
       <div class="flex-shrink-0"> 
-        <img src="images/tournament1.jpeg" alt="..." height="150px" width="250px">
+        <img src="images/tournament1.jpeg" alt="..." height="150px" width="250px" class="img">
       </div>
       <div class="flex-grow-1 ms-3 p-3">
        <b>The ICC Champions Trophy 2025 </b> lands in Pakistan, bringing the world's elite teams. Expect nail-biting ODI clashes, fierce rivalries, and a stadium buzzing with passionate fans. It's a must-see for every cricket lover, promising unforgettable moments and top-tier action.
@@ -271,7 +308,7 @@ footer {
 
     <div class="d-flex">
       <div class="flex-shrink-0"> 
-        <img src="images/tournament2.jpeg" alt="..." height="180px" width="250px" >
+        <img src="images/tournament2.jpeg" alt="..." height="180px" width="250px" class="img">
       </div>
       <div class="flex-grow-1 ms-3 p-4">
         <b>The 19th Asian Marathon Championships</b> bring together elite runners from across Asia to compete in a thrilling test of endurance, speed, and strategy, showcasing exceptional athleticism on an international stage.
@@ -282,7 +319,7 @@ footer {
 
     <div class="d-flex">
       <div class="flex-shrink-0"> 
-        <img src="images/tournament3.jpeg" alt="..." height="180px" width="250px" >
+        <img src="images/tournament3.jpeg" alt="..." height="180px" width="250px" class="img">
       </div>
       <div class="flex-grow-1 ms-3 p-4">
         <b>The FIFA Worldcup</b> football’s biggest stage, uniting nations in a thrilling battle for glory. Held every four years, it showcases world-class talent, passion, and unforgettable moments in the beautiful game.
@@ -293,28 +330,38 @@ footer {
 
     <div class="d-flex">
       <div class="flex-shrink-0"> 
-        <img src="images/tournament4.jpeg" alt="..." height="180px" width="250px" >
+        <img src="images/tournament4.jpeg" alt="..." height="180px" width="250px" class="img">
       </div>
       <div class="flex-grow-1 ms-3 p-4">
         <b>The World Athletics Championships </b> is the pinnacle of track and field, bringing together elite athletes from around the globe to compete for glory, break records, and showcase exceptional talent on the world stage.
     </div>
     </div>
 
+    <br>
     <hr>
+    <br>
 
+    <!-- OUR MISSION -->
+
+    <div class="container-fluid bg-dark text-light mission">
+        <h1 class="center">OUR MISSION</h1>
+        <hr>
     <div class="d-flex">
-      <div class="flex-shrink-0"> 
-        <img src="images/tournament5.jpeg" alt="..." height="180px" width="250px" >
-      </div>
-      <div class="flex-grow-1 ms-3 p-4">
-        <b>The four Grand Slams </b>—Australian Open, French Open, Wimbledon, and US Open—are the most prestigious tennis tournaments, where top players compete on different surfaces for ultimate glory in the sport.
+    <div class="flex-shrink-2"> 
+           <img src="images/aboutus.jpg" alt="..." height="250px" width="300px">
     </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        Our mission at SportInfo is to ignite your passion for sports by delivering a universe of knowledge at your fingertips. We strive to be the ultimate gateway for enthusiasts and beginners alike, demystifying the intricacies of eleven diverse sports with clarity and precision. We're dedicated to cultivating a community where every click unlocks a deeper understanding, transforming casual interest into informed passion. Through engaging content, interactive features, and a commitment to accuracy, we aim to inspire a lifelong love for the games that shape our world. SportInfo- Where curiosity meets expertise!
 
+    </div>
+    </div>
+    </div>
     
-   </div>
-   <br><br>
+   <br>
+
+   <!-- ABOUT US -->
    <div class="container hidden" id="aboutus">
-    <h1><center>ABOUT US</center></h1>
+    <h1 class="text-center font">ABOUT US</h1>
     
     <img src="images/aboutus.jpg" height="100%" width="100%">
 
@@ -341,15 +388,13 @@ footer {
     
     </div>
     </div>
-<br><br>
-
+<br>
 
 <hr>
-<div class="container-fluid  bg-dark text-light" height="auto" width="100%">
-    <h1 class="text-center">GALLERY</h1>
+<h1 class="text-center font">GALLERY</h1>
 
-    <hr>
-    <br><br>
+<div class="bg-danger text-light gallery">
+<hr>
 <div class="row" >
 <div class="col-sm-4">
 <img src="images/gallery1.jpeg" height="250px" width="500px">
@@ -381,10 +426,11 @@ footer {
 </div>
 </div>
 
+<!-- CONTACT US -->
 <div class="container mt-5 hidden" id="contactus">
   <div class="row">
       <div class="col-md-6">
-          <h1><center>CONTACT US</center></h1>
+          <h1 class="text-center font">CONTACT US</h1>
           <form id="contactForm">
               <div class="form-group">
                   <label for="username">Username</label>
@@ -413,34 +459,53 @@ footer {
 </div>
 
 <br>
-<!-- FOOTBALL -->
-    <div class="container bg-dark text-light hidden" id="football">
-      <h1><b><center>FOOTBALL</center></b></h1>
-      <br><br>
 
+<!-- FOOTBALL -->
+    <div class="container bg-light text-dark hidden transition" id="football">
+      <h1 class="text-center font">FOOTBALL</h1>
+      <hr>
+      <br>
+
+      <section class="section">
+        <div class="container-fluid bg-light text-dark mission">
+            <h3 class="center font">WHAT IS FOOTBALL?</h3>
+            <hr>
+        <div class="d-flex">
+        <div class="flex-shrink-2"> 
+               <img src="images/football.jpg" alt="..." height="150px" width="200px">
+        </div>
+        <div class="flex-grow-1 ms-1 p-3">
+            A global team sport played by eleven players, aiming to score goals by kicking or heading the ball. It demands strategic play, endurance, and skill, fostering unity and passion worldwide. It's the world's most popular game.
+
+        </div>
+        </div>
+        </div>
+        
+    </section>
+<br>
         <section class="section">
-            <h2> How Many Players Play the Game?</h2>
+            <h4>HOW MANY PLAYERS PLAY THIS GAME?</h4>
             <p>Each team consists of 11 players on the field, including a goalkeeper.</p>
         </section>
 
         <hr>
 
         <section class="section">
-            <h2> Strategy of the Game</h2>
+            <h4>STRATEGY</h4>
             <p>Football strategies involve tactical formations (e.g., 4-4-2, 4-3-3), possession play, counter-attacking, set-piece execution, and defensive organization. Team strategy varies based on opponent strength and game situation.</p>
         </section>
 
         <hr>
 
         <section class="section">
-            <h2> Is it a Team Game?</h2>
+            <h4>IS IT A TEAM SPORT?</h4>
             <p>Yes, football is a team sport that requires coordination and cooperation among players to achieve victory.</p>
         </section>
 
         <hr>
 
         <section class="section">
-            <h2> Rules of the Game</h2>
+            <h4>RULES OF THE GAME</h4>
             <p>
                 The game is played with a spherical ball between two teams of 11 players. The objective is to score by kicking or heading the ball into the opposing team's goal. Players cannot use their hands or arms except for the goalkeeper within their penalty area. Offside rules, fouls, and penalties govern play.
             </p>
@@ -449,7 +514,7 @@ footer {
         <hr>
 
         <section class="section">
-            <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+            <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
             <ul class="fact-list">
                 <li>Football's modern rules were codified in England in the 19th century.</li>
                 <li>The FIFA World Cup is the most prestigious international football tournament, held every four years.</li>
@@ -461,7 +526,7 @@ footer {
         <hr>
 
         <section class="section">
-            <h2> Statistics/Records</h2>
+            <h4>STATISTICS/RECORDS</h4>
             <p>
                 Records include most World Cup titles (Brazil), most goals scored in a career (Cristiano Ronaldo), most Ballon d'Or awards (Lionel Messi), and fastest goal scored. Many other team and individual records exist.
             </p>
@@ -470,7 +535,7 @@ footer {
         <hr>
 
         <section class="section">
-            <h2> Which Countries Play This Game?</h2>
+            <h4>COUNTRIES THAT PLAY THIS GAME</h4>
             <div class="country-list">
                 <div class="country-item">Brazil</div>
                 <div class="country-item">Argentina</div>
@@ -499,32 +564,50 @@ footer {
     
 <br>
 <!-- JUDO -->
-    <div class="container bg-dark text-light hidden" id="judo">
-      <h1><b><center>JUDO</center></b></h1>
-      <br><br>
+    <div class="container bg-light text-dark hidden transition"  id="judo">
+      <h1 class="text-center font">JUDO</h1>
+      <hr>
+      <br>
+
+      <section class="section">
+        <div class="container-fluid bg-light text-dark mission">
+            <h3 class="center font">WHAT IS JUDO?</h3>
+            <hr>
+        <div class="d-flex">
+        <div class="flex-shrink-2"> 
+               <img src="images/judo.jpg" alt="..." height="150px" width="200px">
+        </div>
+        <div class="flex-grow-1 ms-1 p-3">
+            A Japanese martial art focusing on grappling and throws, emphasizing discipline and respect. It cultivates physical and mental strength, serving as both self-defense and a competitive Olympic sport, demanding precise technique.
+
+        </div>
+        </div>
+        </div>
+    </section>
+
         <section class="section">
-            <h2> How Many Competitors Compete at a Time?</h2>
+            <h4>HOW MANY COMPETITORS COMPETE AT A TIME?</h4>
             <p>Judo is a one-on-one combat sport, so two competitors compete at a time.</p>
         </section>
 
         <hr>
 
         <section class="section">
-            <h2> Strategy of the Game</h2>
+            <h4>STRATEGY</h4>
             <p>Judo strategies involve mastering throws (nage-waza), grappling techniques (katame-waza), and striking techniques (atemi-waza, typically only in kata). Strategic positioning, grip fighting, and anticipating the opponent's moves are crucial.</p>
         </section>
 
         <hr>
 
         <section class="section">
-            <h2> Is it a Combat Sport?</h2>
+            <h4>IS IT A COMBAT SPORT?</h4>
             <p>Yes, Judo is a modern martial art and combat sport.</p>
         </section>
 
         <hr>
 
         <section class="section">
-            <h2> Rules of the Game</h2>
+            <h4>RULES</h4>
             <p>
                 The objective is to throw an opponent to the ground, immobilize them, or force them to submit using joint locks or chokeholds. Points are awarded for successful throws and holds. Unsportsmanlike conduct and illegal techniques are penalized.
             </p>
@@ -533,7 +616,7 @@ footer {
         <hr>
 
         <section class="section">
-            <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+            <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
             <ul class="fact-list">
                 <li>Judo was created by Jigoro Kano in Japan in 1882.</li>
                 <li>Judo became an Olympic sport in 1964.</li>
@@ -545,7 +628,7 @@ footer {
         <hr>
 
         <section class="section">
-            <h2> Statistics/Records</h2>
+            <h4>STATISTICS/RECORDS</h4>
             <p>
                 Records include Olympic and World Championship titles, as well as individual achievements in various weight classes. Notable judoka include Tadahiro Nomura (multiple Olympic gold medalist) and Teddy Riner (multiple World and Olympic titles).
             </p>
@@ -554,7 +637,7 @@ footer {
         <hr>
 
         <section class="section">
-            <h2> Which Countries Play This Game?</h2>
+            <h4>WHICH COUNTRIES PLAY THIS GAME?</h4>
             <div class="country-list">
                 <div class="country-item">Japan</div>
                 <div class="country-item">France</div>
@@ -580,33 +663,50 @@ footer {
     </div>
 <br>
 <!-- TENNIS -->
-<div class="container bg-dark text-light hidden" id="tennis">
-  <h1><b><center>TENNIS</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="tennis">
+  <h1 class="text-center font">TENNIS</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Players Play the Game?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS TENNIS?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/tennis.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A racquet sport, played in singles or doubles, where players hit a ball over a net. It requires precision, agility, power, and strategic thinking, featured in global tournaments and the Olympics, showcasing athleticism.
+    
+    </div>
+    </div>
+    </div>
+</section>
+
+  <section class="section">
+      <h4>HOW MANY PLAYERS PLAY THIS GAME?</h4>
       <p>Tennis can be played as singles (one player vs. one player) or doubles (two players vs. two players).</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Tennis strategies involve serving placement, groundstroke consistency, net play, and adapting to the opponent's weaknesses. Players focus on court positioning, shot selection, and mental toughness.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it a Singles or Team Game?</h2>
+      <h4>IS IT A TEAM SPORT?</h4>
       <p>Tennis can be both a singles and a doubles (team) sport.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           The objective is to hit the ball over the net and into the opponent's court, preventing them from returning it. Points are scored when an opponent fails to return the ball within the court boundaries. Sets and matches are determined by the number of games won.
       </p>
@@ -615,7 +715,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Tennis originated in England in the late 19th century.</li>
           <li>The four Grand Slam tournaments are the most prestigious events: Australian Open, French Open, Wimbledon, and US Open.</li>
@@ -627,7 +727,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Statistics/Records</h2>
+      <h4>STATISTICS/RECORDS</h4>
       <p>
           Records include most Grand Slam titles (Margaret Court, Novak Djokovic), most weeks ranked number one (Roger Federer, Steffi Graf), and longest matches. Many other individual and tournament records exist.
       </p>
@@ -636,7 +736,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Which Countries Play This Game?</h2>
+      <h4>WHICH COUNTRIES PLAY THIS?</h4>
       <div class="country-list">
           <div class="country-item">USA</div>
           <div class="country-item">Australia</div>
@@ -663,33 +763,50 @@ footer {
 <br>
 
 <!-- MOTORCYCLE RACING -->
-<div class="container bg-dark text-light hidden" id="motorcycle-racing">
-  <h1><b><center>MOTORCYCLE RACING</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="motorcycle-racing">
+  <h1 class="text-center font">MOTORCYCLE RACING</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Competitors Compete at a Time?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS MOTRCYCLE RACING?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/motorcycle racing.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A high-speed competition involving motorcycles across various disciplines, demanding skill, courage, and precision. Riders navigate circuits or off-road courses, pushing speed limits while prioritizing safety and utilizing advanced technology.
+
+    </div>
+    </div>
+    </div>
+</section>
+
+  <section class="section">
+      <h4>HOW MANY COMPETITORS COMPETE AT A TIME?</h4>
       <p>Multiple competitors race simultaneously, depending on the specific racing series (e.g., MotoGP, Superbike).</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Motorcycle racing strategies involve optimizing bike setup, tire management, track awareness, and overtaking maneuvers. Riders focus on maintaining speed, cornering efficiently, and managing risk.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it an Individual Sport?</h2>
+      <h4>IS IT AN AN INDIVIDUAL SPORT?</h4>
       <p>Yes, motorcycle racing is primarily an individual sport.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           Riders must complete a specified number of laps within the track boundaries. Overtaking is allowed within designated zones. Penalties are given for rule violations, such as exceeding track limits or causing collisions.
       </p>
@@ -698,7 +815,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Motorcycle racing includes various disciplines, such as road racing, motocross, and speedway.</li>
           <li>MotoGP is the premier class of motorcycle road racing.</li>
@@ -710,7 +827,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Statistics/Records</h2>
+      <h4>STATISTICS/RECORDS</h4>
       <p>
           Records include most MotoGP titles (Giacomo Agostini), most race wins (Giacomo Agostini), and fastest lap times at various circuits. Many other individual and team records exist.
       </p>
@@ -719,7 +836,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Which Countries Participate in This Sport?</h2>
+      <h4>WHICH COUNTRIES PLAY THIS GAME?</h4>
       <div class="country-list">
           <div class="country-item">Italy</div>
           <div class="country-item">Spain</div>
@@ -746,33 +863,50 @@ footer {
 <br>
 
 <!-- VOLLEYBALL -->
-<div class="container bg-dark text-light hidden" id="volleyball">
-  <h1><b><center>VOLLEYBALL</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="volleyball">
+  <h1 class="text-center font">VOLLEYBALL</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Players Play the Game?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS VOLLEYBALL?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/volleyball.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A team sport on a divided court, where players aim to ground the ball using skills like serving and setting. It fosters teamwork, agility, and coordination, is an Olympic event, and is widely popular.
+
+    </div>
+    </div>
+    </div>
+    </section>
+
+  <section class="section">
+      <h4>HOW MANY PLAYERS PLAY THIS GAME?</h4>
       <p>Each team consists of six players on the court.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Volleyball strategies involve serving tactics, setting plays, spiking techniques, blocking strategies, and defensive formations. Teamwork and communication are crucial for success.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it a Team Game?</h2>
+      <h4> IS IT A TEAM SPORT?</h4>
       <p>Yes, volleyball is a team sport.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           The objective is to ground the ball on the opponent's court or force an error. Players cannot touch the net or cross the center line. Points are scored by the serving team or when the opponent commits a fault.
       </p>
@@ -781,7 +915,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Volleyball was invented in the United States in 1895.</li>
           <li>Volleyball is an Olympic sport.</li>
@@ -793,7 +927,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Statistics/Records</h2>
+      <h4>STATISTICS/RECORDS</h4>
       <p>
           Records include Olympic and World Championship titles, individual awards for best players, and team achievements. Many other national and international records exist.
       </p>
@@ -802,7 +936,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Which Countries Play This Game?</h2>
+      <h4>WHICH COUNTRIES PLAY THIS GAME?</h4>
       <div class="country-list">
           <div class="country-item">Brazil</div>
           <div class="country-item">USA</div>
@@ -826,33 +960,50 @@ footer {
 <br>
 
 <!-- GOLF -->
-<div class="container bg-dark text-light hidden" id="golf">
-  <h1><b><center>GOLF</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="golf">
+  <h1 class="text-center font">GOLF</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Players Play the Game?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS GOLF?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/golf.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A precision sport where players use clubs to hit balls into holes with the fewest strokes. It requires skill, strategy, and mental focus, played on diverse courses, and is accessible to all ages, with prestigious tournaments.
+
+    </div>
+    </div>
+    </div>
+    </section>
+
+  <section class="section">
+      <h4>HOW MANY PLAYERS PLAY THIS GAME?</h4>
       <p>Golf can be played individually or in teams, with varying formats (stroke play, match play).</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Golf strategies involve course management, club selection, shot placement, and putting accuracy. Players focus on minimizing strokes and adapting to course conditions.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it an Individual or Team Sport?</h2>
+      <h4>IS IT A TEAM SPORT?</h4>
       <p>Golf can be played both as an individual and a team sport.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           The objective is to complete a round of golf with the fewest number of strokes. Players must hit the ball from the teeing ground into the hole using various clubs, adhering to course rules and penalties.
       </p>
@@ -861,7 +1012,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Golf originated in Scotland in the 15th century.</li>
           <li>The four major championships are the Masters, PGA Championship, US Open, and The Open Championship.</li>
@@ -873,7 +1024,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Statistics/Records</h2>
+      <h4> STATISTICS/RECORDS</h4>
       <p>
           Records include most major championship wins (Jack Nicklaus), lowest scoring averages, and longest drives. Many other individual and tournament records exist.
       </p>
@@ -882,7 +1033,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Which Countries Play This Game?</h2>
+      <h4>WHICH COUNTRIES PLAY THIS GAME?</h4>
       <div class="country-list">
           <div class="country-item">USA</div>
           <div class="country-item">Scotland</div>
@@ -909,33 +1060,50 @@ footer {
 <br>
 
 <!-- CHESS -->
-<div class="container bg-dark text-light hidden" id="chess">
-  <h1><b><center>CHESS</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="chess">
+  <h1 class="text-center font">CHESS</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Players Play the Game?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS CHESS?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/chess.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A board game requiring strategic thinking and planning, where players aim to checkmate the opponent's king. It tests intellect and foresight, is featured in global tournaments, and has a rich historical background as a mind sport.
+
+    </div>
+    </div>
+    </div>
+    </section>
+
+  <section class="section">
+      <h4>HOW MANY PLAYERS PLAY THIS GAME?</h4>
       <p>Chess is a two-player board game.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Chess strategies involve controlling the center of the board, developing pieces, planning attacks, and defending against threats. Players focus on tactical calculations and long-term planning.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it an Individual Sport?</h2>
+      <h4>IS IT AN INDIVIDUAL SPORT?</h4>
       <p>Yes, chess is an individual sport.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           The objective is to checkmate the opponent's king, meaning the king is under immediate attack (in "check") and there is no way to remove it from attack. Each piece has unique movement rules.
       </p>
@@ -944,7 +1112,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Chess originated in India in the 6th century.</li>
           <li>The World Chess Championship is the most prestigious event.</li>
@@ -956,7 +1124,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Statistics/Records</h2>
+      <h4> STATISTICS/RECORDS</h4>
       <p>
           Records include highest Elo ratings (Magnus Carlsen), longest unbeaten streaks, and most World Championship titles (Emanuel Lasker, Garry Kasparov). Many other individual records exist.
       </p>
@@ -965,7 +1133,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Which Countries Play This Game?</h2>
+      <h4>WHICH COUNTRIES PLAY THIS GAME?</h4>
       <div class="country-list">
           <div class="country-item">Russia</div>
           <div class="country-item">India</div>
@@ -992,33 +1160,50 @@ footer {
 <br>
 
 <!-- BILLIARDS -->
-<div class="container bg-dark text-light hidden" id="billiards">
-  <h1><b><center>BILLIARDS</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="billiards">
+  <h1 class="text-center font">BILLIARDS</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Players Play the Game?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS BILLIARDS?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/billiards.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A cue sport played on a table, involving precise shots and strategic positioning of balls. It demands skill, focus, and understanding of angles, with various game variations and competitive tournaments.
+
+    </div>
+    </div>
+    </div>
+    </section>
+
+  <section class="section">
+      <h4>HOW MANY PLAYERS PLAY THIS GAME?</h4>
       <p>Billiards can be played by two players or in teams, depending on the specific game (e.g., 8-ball, 9-ball, snooker).</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Billiards strategies involve shot selection, cue ball control, positioning for future shots, and defensive play. Players focus on planning sequences and executing precise shots.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it an Individual or Team Sport?</h2>
+      <h4>IS IT A TEAM SPORT?</h4>
       <p>Billiards can be played both as an individual and a team sport.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           The objective varies based on the game. In 8-ball, players aim to pocket their designated group of balls and then the 8-ball. In snooker, players aim to pocket balls in a specific sequence.
       </p>
@@ -1027,7 +1212,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Billiards has a long history, with variations played worldwide.</li>
           <li>Snooker, 8-ball, and 9-ball are popular variations.</li>
@@ -1039,7 +1224,7 @@ footer {
     <hr>
 
     <section class="section">
-        <h2> Statistics/Records</h2>
+        <h4> STATISTICS/RECORDS</h4>
         <p>
             Records include most World Snooker Championship titles (Ronnie O'Sullivan, Stephen Hendry), highest break scores, and tournament wins. Many other individual and team records exist.
         </p>
@@ -1048,7 +1233,7 @@ footer {
     <hr>
 
     <section class="section">
-        <h2> Which Countries Play This Game?</h2>
+        <h4>WHICH COUNTRIES PLAY THIS?</h4>
         <div class="country-list">
             <div class="country-item">England</div>
             <div class="country-item">China</div>
@@ -1075,33 +1260,50 @@ footer {
 <br>
 
 <!-- BADMINTON -->
-<div class="container bg-dark text-light hidden" id="badminton">
-  <h1><b><center>BADMINTON</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="badminton">
+  <h1 class="text-center font">BADMINTON</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Players Play the Game?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS BADMINTON?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/badminton.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A racquet sport using a shuttlecock, played over a net, requiring agility, speed, and skill. It involves smashes, drops, and fast-paced rallies, is an Olympic sport, and is commonly played indoors.
+
+    </div>
+    </div>
+    </div>
+    </section>
+
+  <section class="section">
+      <h4>HOW MANY PLAYERS PLAY THIS GAME?</h4>
       <p>Badminton can be played as singles (one player vs. one player) or doubles (two players vs. two players).</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Badminton strategies involve shot placement, net play, footwork, and anticipating the opponent's movements. Players focus on speed, agility, and tactical awareness.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it a Singles or Team Game?</h2>
+      <h4>IS IT A TEAM SPORT?</h4>
       <p>Badminton can be played both as a singles and a doubles (team) sport.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           The objective is to hit the shuttlecock over the net and into the opponent's court, preventing them from returning it. Points are scored when the shuttlecock lands within the court boundaries or when the opponent commits a fault.
       </p>
@@ -1110,7 +1312,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Badminton originated in India and was popularized in England in the 19th century.</li>
           <li>Badminton is an Olympic sport.</li>
@@ -1122,7 +1324,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Statistics/Records</h2>
+      <h4> STATISTICS/RECORDS</h4>
       <p>
           Records include Olympic and World Championship titles, individual awards for best players, and tournament wins. Many other national and international records exist.
       </p>
@@ -1131,7 +1333,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Which Countries Play This Game?</h2>
+      <h4>WHICH COUNTRIES PLAY THIS GAME?</h4>
       <div class="country-list">
           <div class="country-item">China</div>
           <div class="country-item">Indonesia</div>
@@ -1158,33 +1360,50 @@ footer {
 <br>
 
 <!-- SWIMMING -->
-<div class="container bg-dark text-light hidden" id="swimming">
-  <h1><b><center>SWIMMING</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="swimming">
+  <h1 class="text-center font">SWIMMING</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Competitors Compete at a Time?</h2>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS SWIMMING?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/swimming.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        An aquatic sport involving various strokes, emphasizing speed, endurance, and overall fitness. It's practiced in pools or open water, featured in competitions and the Olympics, and demands precise technique.
+
+    </div>
+    </div>
+    </div>
+    </section>
+
+  <section class="section">
+      <h4>HOW MANY COMPETITORS COMPETE AT A TIME?</h4>
       <p>Swimming competitions involve individual races or relay races with multiple swimmers competing simultaneously.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Strategy of the Game</h2>
+      <h4> STRATEGY</h4>
       <p>Swimming strategies involve stroke technique, pacing, breathing control, and starts/turns. Swimmers focus on maximizing efficiency and minimizing drag.</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Is it an Individual or Team Sport?</h2>
+      <h4>IS IT A TEAM SPORT?</h4>
       <p>Swimming can be both an individual and a team sport (relay races).</p>
   </section>
 
   <hr>
 
   <section class="section">
-      <h2> Rules of the Game</h2>
+      <h4>RULES</h4>
       <p>
           The objective is to complete a race in the fastest time, adhering to stroke regulations and turn rules. False starts and illegal strokes are penalized.
       </p>
@@ -1193,7 +1412,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+      <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
       <ul class="fact-list">
           <li>Swimming is an ancient activity and a modern Olympic sport.</li>
           <li>Four main competitive strokes are freestyle, backstroke, breaststroke, and butterfly.</li>
@@ -1205,7 +1424,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Statistics/Records</h2>
+      <h4>STATISTICS/RECORDS</h4>
       <p>
           Records include Olympic and World Championship titles, world records for various distances and strokes, and individual achievements. Many other national and international records exist.
       </p>
@@ -1214,7 +1433,7 @@ footer {
   <hr>
 
   <section class="section">
-      <h2> Which Countries Participate in This Sport?</h2>
+      <h4> WHICH COUNTRIES PLAY THIS SPORT?</h4>
       <div class="country-list">
           <div class="country-item">USA</div>
           <div class="country-item">Australia</div>
@@ -1241,48 +1460,50 @@ footer {
 <br>
 
 <!-- ATHLETICS -->
-<div class="container bg-dark text-light hidden" id="athletics">
-  <h1><b><center>ATHLETICS</center></b></h1>
-  <br><br>
+<div class="container bg-light text-dark hidden transition" id="athletics">
+  <h1 class="text-center font">ATHLETICS</h1>
+  <hr>
+  <br>
 
   <section class="section">
-      <h2> How Many Competitors Compete at a Time?</h2>
-      <p>Athletics events involve individual competitions or relay races with varying numbers of competitors.</p>
-  </section>
+    <div class="container-fluid bg-light text-dark mission">
+        <h3 class="center font">WHAT IS ATHLETICS?</h3>
+        <hr>
+    <div class="d-flex">
+    <div class="flex-shrink-2"> 
+           <img src="images/athletics.jpg" alt="..." height="150px" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-1 p-3">
+        A collection of track and field events, including running, jumping, and throwing, demanding endurance, speed, and strength. It showcases diverse skills in competitions, including the Olympics, and offers a wide variety of events.
 
-  <hr>
-
-  <section class="section">
-      <h2> Strategy of the Game</h2>
-      <p>Athletics strategies vary depending on the event. Running events involve pacing and sprinting, jumping events involve technique and power, and throwing events involve technique and strength. Athletes focus on maximizing performance and minimizing errors.</p>
-  </section>
-
-  <hr>
-
+    </div>
+    </div>
+    </div>
+    </section>
   
     <section class="section">
-        <h2> How Many Competitors Compete at a Time?</h2>
+        <h4>HOW MANY COMPETITORS COMPETE AT A TIME?</h4>
         <p>Athletics events involve individual competitions or relay races with varying numbers of competitors.</p>
     </section>
 
     <hr>
 
     <section class="section">
-        <h2> Strategy of the Game</h2>
+        <h4>STRATEGY</h4>
         <p>Athletics strategies vary depending on the event. Running events involve pacing and sprinting, jumping events involve technique and power, and throwing events involve technique and strength. Athletes focus on maximizing performance and minimizing errors.</p>
     </section>
 
     <hr>
 
     <section class="section">
-        <h2> Is it an Individual or Team Sport?</h2>
+        <h4>IS IT A TEAM GAME?</h4>
         <p>Athletics can be both an individual and a team sport (relay races).</p>
     </section>
 
     <hr>
 
     <section class="section">
-        <h2> Rules of the Game</h2>
+        <h4>RULES</h4>
         <p>
             The objective varies based on the event. Running events aim to complete a distance in the fastest time, jumping events aim for maximum distance or height, and throwing events aim for maximum distance. Rules govern starts, finishes, fouls, and measurement procedures.
         </p>
@@ -1291,7 +1512,7 @@ footer {
     <hr>
 
     <section class="section">
-        <h2><b>IMPORTANT FACTS ABOUT THE GAME</b></h2>
+        <h4>IMPORTANT FACTS ABOUT THE GAME</h4>
         <ul class="fact-list">
             <li>Athletics is one of the oldest sports, with roots in ancient Greece.</li>
             <li>The Olympic Games feature a wide range of athletics events.</li>
@@ -1303,7 +1524,7 @@ footer {
     <hr>
 
     <section class="section">
-        <h2> Statistics/Records</h2>
+        <h4>STATISTICS/RECORDS</h4>
         <p>
             Records include Olympic and World Championship titles, world records for various events, and individual achievements. Many other national and international records exist.
         </p>
@@ -1312,7 +1533,7 @@ footer {
     <hr>
 
     <section class="section">
-        <h2> Which Countries Participate in This Sport?</h2>
+        <h4> WHICH COUNTRIES PLAY THIS SPORT?</h4>
         <div class="country-list">
             <div class="country-item">USA</div>
             <div class="country-item">Kenya</div>
@@ -1395,7 +1616,7 @@ footer {
 
  <script>
 
-    // MODAL BOX FUNCTIONALITY 
+    // REGISTRATION BOX FUNCTIONALITY 
     
     function showSuccessMessage(message) {
         let successMessage = document.getElementById("successMessage");
@@ -1448,7 +1669,7 @@ footer {
 
 
 
-
+//SEARCHBAR FUNCTIONALITY 
   function result(){
     let search = document.getElementById("search").value
 
@@ -1456,7 +1677,7 @@ footer {
       document.getElementById("searchresult").innerHTML =
       `
       
-    <div class="container-fluid bg-warning">
+    <div class="container-fluid bg-danger text-light img">
       <h2><b><center>FOOTBALL</center></b></h2>
     <img src="images/football.jpg" alt="Football Banner" class="header-image" height="auto" width="100%">
 <br>
@@ -1545,12 +1766,12 @@ footer {
       document.getElementById("searchresult").innerHTML = 
       `
       
-    <div class="container bg-warning">
+    <div class="container bg-danger text-light img">
       <h2><b><center>JUDO</center></b></h2>
     <img src="images/judo.jpg" alt="Judo Banner" class="header-image" height="auto" width="100%">
 <br>
 
-        <section class="section bg-light text-dark" >
+        <section >
             <h2> How Many Competitors Compete at a Time?</h2>
             <p>Judo is a one-on-one combat sport, so two competitors compete at a time.</p>
         </section>
@@ -1632,12 +1853,12 @@ footer {
       `
       
        
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>TENNIS</center></b></h2>
 <img src="images/tennis.jpg" alt="Tennis Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Players Play the Game?</h2>
         <p>Tennis can be played as singles (one player vs. one player) or doubles (two players vs. two players).</p>
     </section>
@@ -1717,12 +1938,12 @@ footer {
       document.getElementById("searchresult").innerHTML = 
       `
       
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>MOTORCYCLE RACING</center></b></h2>
 <img src="images/motorcycle racing.jpg" alt="Motorcycle Racing Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Competitors Compete at a Time?</h2>
         <p>Multiple competitors race simultaneously, depending on the specific racing series (e.g., MotoGP, Superbike).</p>
     </section>
@@ -1803,12 +2024,12 @@ footer {
       document.getElementById("searchresult").innerHTML = 
       `
     
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>VOLLEYBALL</center></b></h2>
 <img src="images/volleyball.jpg" alt="Volleyball Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Players Play the Game?</h2>
         <p>Each team consists of six players on the court.</p>
     </section>
@@ -1853,18 +2074,43 @@ footer {
     <section class="section">
         <h2> Statistics/Records</h2>
         <p>
-            Records include Olympic and World Championship titles, individual awards for best players,
+            Records include Olympic and World Championship titles, individual awards for best players.
+        </p>
+    </section>
+
+    <section class="section">
+      <h4>WHICH COUNTRIES PLAY THIS GAME?</h4>
+      <div class="country-list">
+          <div class="country-item">Brazil</div>
+          <div class="country-item">USA</div>
+          <div class="country-item">Italy</div>
+            <div class="country-item">Russia</div>
+            <div class="country-item">Poland</div>
+            <div class="country-item">China</div>
+            <div class="country-item">Japan</div>
+            <div class="country-item">Serbia</div>
+            <div class="country-item">Netherlands</div>
+            <div class="country-item">Germany</div>
+            <div class="country-item">France</div>
+            <div class="country-item">Canada</div>
+            <div class="country-item">Argentina</div>
+            <div class="country-item">Cuba</div>
+            <div class="country-item">South Korea</div>
+        </div>
+    </section>
+
       `
+      
     }else  if(search === "golf" || search === "Golf" ||search === "GOLF"){
       document.getElementById("searchresult").innerHTML = 
         `
         
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>GOLF</center></b></h2>
 <img src="images/golf.jpg" alt="Golf Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Players Play the Game?</h2>
         <p>Golf can be played individually or in teams, with varying formats (stroke play, match play).</p>
     </section>
@@ -1945,12 +2191,12 @@ footer {
         document.getElementById("searchresult").innerHTML = 
           `
 
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>CHESS</center></b></h2>
 <img src="images/chess.jpg" alt="Chess Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Players Play the Game?</h2>
         <p>Chess is a two-player board game.</p>
     </section>
@@ -2030,12 +2276,12 @@ footer {
           document.getElementById("searchresult").innerHTML = 
           `
 
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>BILLIARDS</center></b></h2>
 <img src="images/billiards.jpg" alt="Billiards Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Players Play the Game?</h2>
         <p>Billiards can be played by two players or in teams, depending on the specific game (e.g., 8-ball, 9-ball, snooker).</p>
     </section>
@@ -2084,18 +2330,41 @@ footer {
         </p>
     </section>
 
-    <hr
+    <hr>
+    <section class="section">
+        <h4>WHICH COUNTRIES PLAY THIS?</h4>
+        <div class="country-list">
+            <div class="country-item">England</div>
+            <div class="country-item">China</div>
+            <div class="country-item">USA</div>
+            <div class="country-item">Scotland</div>
+            <div class="country-item">Wales</div>
+            <div class="country-item">Ireland</div>
+            <div class="country-item">Australia</div>
+            <div class="country-item">Canada</div>
+            <div class="country-item">Germany</div>
+            <div class="country-item">Thailand</div>
+            <div class="country-item">Belgium</div>
+            <div class="country-item">Netherlands</div>
+            <div class="country-item">Malta</div>
+            <div class="country-item">India</div>
+            <div class="country-item">Pakistan</div>
+            <div class="country-item">Hong Kong</div>
+            <div class="country-item">Singapore</div>
+            <div class="country-item">South Africa</div>
+        </div>
+    </section>
           `
         }else  if(search === "badminton" || search === "Badminton" ||search === "BADMINTON"){
           document.getElementById("searchresult").innerHTML = 
           `
           
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>BADMINTON</center></b></h2>
 <img src="images/badminton.jpg" alt="Badminton Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Players Play the Game?</h2>
         <p>Badminton can be played as singles (one player vs. one player) or doubles (two players vs. two players).</p>
     </section>
@@ -2175,12 +2444,12 @@ footer {
           document.getElementById("searchresult").innerHTML = 
           `
           
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
   <h2><b><center>SWIMMING</center></b></h2>
 <img src="images/swimming.jpg" alt="Swimming Banner" class="header-image" height="auto" width="100%">
 <br>
 
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Competitors Compete at a Time?</h2>
         <p>Swimming competitions involve individual races or relay races with multiple swimmers competing simultaneously.</p>
     </section>
@@ -2260,11 +2529,11 @@ footer {
           document.getElementById("searchresult").innerHTML = 
           `
          
-<div class="container bg-warning">
+<div class="container bg-danger text-light img">
  <h2><b><center>ATHLETICS</center></b></h2>
 <img src="images/athletics.jpg" alt="Athletics Banner" class="header-image" height="auto" width="100%">
 <br>
-    <section class="section bg-light text-dark">
+    <section>
         <h2> How Many Competitors Compete at a Time?</h2>
         <p>Athletics events involve individual competitions or relay races with varying numbers of competitors.</p>
     </section>
@@ -2289,15 +2558,40 @@ footer {
         <h2> Rules of the Game</h2>
         <p>
             The objective varies based on the event. Running events aim to complete a distance in the fastest time, jumping events aim for maximum distance or height, and throwing events aim for maximum distance.
-          `;
+        </p>
+        </section>
+
+        <section class="section">
+        <h4> WHICH COUNTRIES PLAY THIS SPORT?</h4>
+        <div class="country-list">
+            <div class="country-item">USA</div>
+            <div class="country-item">Kenya</div>
+            <div class="country-item">Jamaica</div>
+            <div class="country-item">Ethiopia</div>
+            <div class="country-item">Great Britain</div>
+            <div class="country-item">Germany</div>
+            <div class="country-item">China</div>
+            <div class="country-item">Russia</div>
+            <div class="country-item">France</div>
+            <div class="country-item">Poland</div>
+            <div class="country-item">Netherlands</div>
+            <div class="country-item">Canada</div>
+            <div class="country-item">Australia</div>
+            <div class="country-item">South Africa</div>
+            <div class="country-item">Cuba</div>
+            <div class="country-item">Spain</div>
+            <div class="country-item">Italy</div>
+            <div class="country-item">Ukraine</div>
+        </div>
+    </section>
+            `;
         }
     else{
 document.getElementById("searchresult").innerHTML = 
 `
 <br>
-<h5 class="text-danger">OOPS! SEEMS LIKE ` + " ' " + search + " ' " + ` is not a keyword.
-  <br>
-  Try searching a valid keyword!
+<h5 class="text-danger">
+  OOPS! INVALID KEYWORD
   </h5>
 `
     }
